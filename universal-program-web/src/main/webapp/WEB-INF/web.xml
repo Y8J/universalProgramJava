@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="MyWebApp" version="2.5">
+	<display-name>nengye</display-name>
+ 
+	<!-- 启动spring -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:spring/applicationContext*.xml</param-value>
+	</context-param>
+
+	<!-- applicationContext -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<!-- 编码过滤器，以UTF8编码 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+	<!-- 将POST请求转化为DELETE或者是PUT 要用_method指定真正的请求方法 -->
+	<filter>
+		<filter-name>HiddenHttpMethodFilter</filter-name>
+		<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>HiddenHttpMethodFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- 解决PUT请求无法提交Form的问题 -->
+	<filter>
+		<filter-name>HttpMethodFilter</filter-name>
+		<filter-class>org.springframework.web.filter.HttpPutFormContentFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>HttpMethodFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- 加载springMVC -->
+	
+	<!-- 后台admin系统 -->
+	<servlet>
+		<servlet-name>admin</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring/admin-servlet.xml</param-value>
+		</init-param>
+
+		<!-- 启动级别 -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>admin</servlet-name>
+		<!-- 所有请求都进入 -->
+		<!--
+		   以“/”字符开头，并以“/*”结尾的字符串用于路径映射。
+                   以“*.”开头的字符串被用于扩展名映射。
+		   空字符串（""）是用于指定精确映射应用程序 context root 的 URL 模式，比如从 http://host:port/<contextroot>/ 来的请求。在这种情况下路径信息是“/”，servlet 路径和 context 路径是一个空的字符串（""）。
+		   字符串中仅有“/”字符时，表示应用程序“默认”的 servlet。在这种情况下 servlet 路径是请求 URI 去掉 context 路径，且路径信息为 null。
+		    其他的字符串仅用于精确匹配。
+		 -->
+		<!-- 注意 / 与 /* 的区别 <url-pattern>/*</url-pattern> -->
+		<url-pattern>/admin/*</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 手机端webapp系统 -->
+	<servlet>
+		<servlet-name>webapp</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name> 
+			<param-value>classpath:spring/webapp-servlet.xml</param-value>
+		</init-param>
+
+		<!-- 启动级别 -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>webapp</servlet-name>
+		
+		<!-- 注意 / 与 /* 的区别 <url-pattern>/*</url-pattern> -->
+		<url-pattern>/webapp/*</url-pattern>
+	</servlet-mapping>
+
+    
+     <!-- pc端front系统 -->
+	<servlet>
+		<servlet-name>front</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name> 
+			<param-value>classpath:spring/front-servlet.xml</param-value>
+		</init-param>
+
+		<!-- 启动级别 -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>front</servlet-name>
+		
+		<!-- 注意 / 与 /* 的区别 <url-pattern>/*</url-pattern> -->
+		<url-pattern>/front/*</url-pattern>
+	</servlet-mapping>
+	
+
+    <!-- <init-param>
+        <param-name>/</param-name>
+        <param-value>true</param-value>
+    </init-param> -->
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+</web-app>
+	

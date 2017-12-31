@@ -1,0 +1,103 @@
+			   爱派卫材项目编号名称
+			命名都是以每个词语第一个字母组合
+			  （例如“待付款”：“dfk”）
+首页
+	首页	index.html
+	商品分类	product_class.html
+	商品详情	product_details
+	累计评价	xxxxx	
+
+	忘记密码	forget_password.html
+	密码重置	xxxxx
+	用户注册	user_registration.html
+
+	商家
+		商家首页	sj_index.html
+		商家基本信息	sj_jbInfo.html
+		商家企业信息	sj_qymgs.html
+
+	以商会友	three
+	添加好友	three
+
+我的爱派(mip)
+	个人中心	mip_center.html
+	基本资料	mip_jbzl.html
+	修改密码	mip_xgmm.html
+
+	订单管理
+		线上(xs)
+			@ 待付款		mip_ddglxs_dfk.html
+			订单详情	mip_ddglxs_dfk_ddxq.html
+			待发货		mip_ddglxs_dfhuo.html
+			订单详情	mip_ddglxs_dfhuo_ddxq.html
+			待收货		mip_ddglxs_dsh.html
+			订单详情	mip_ddglxs_dsh_ddxq.html
+			以完成		mip_ddglxs_ywc.html
+			订单详情	mip_ddglxs_ywc_ddxq.html
+			评价		mip_ddglxs_pj.html
+			申请售后	xxxxx
+			售后		mip_ddglxs_sh.html
+			订单详情	mip_ddglxs_sh_ddxq.html
+		线下(xx)
+			待发货		mip_ddglxx_dfhuo.html
+			订单详情	mip_ddglxx_dfhuo_ddxq.html
+			待收货		mip_ddglxx_dsh.html
+			订单详情	mip_ddglxx_dsh_ddxq.html
+			以完成		mip_ddglxx_ywc.html
+			订单详情	mip_ddglxx_ywc_ddxq.html
+			评价		mip_ddglxx_pj.html
+
+		@  收货地址	mip_ddgl_shdz.html
+		添加地址	xxxxx
+		我的收藏	mip_ddgl_msc.html
+		我的关注    mip_ddgl_mgz.html
+		浏览记录	mip_ddgl_lljl.html
+		关于我们	mip_ddgl_gywm.html
+
+	@ d1进货单	jh_list.html
+	d2确认结算	xxxxx
+	d3支付页面	payment_page.html
+
+	我是供应商(imgys)
+		基本信息	im_gys_jbxx.html
+		企业信息	im_gys_qyxx.html
+		店铺装修	im_gys_dpzx.html
+		商品编辑	im_gys_spbj.html
+		自定义装修	im_gys_zdyzx.html
+
+	我是供应商（订单管理）
+		线上
+			待付款		imgys_ddglxs_dfk.html
+			订单详情	imgys_ddglxs_dfk_ddxq.html
+			待发货		imgys_ddglxs_dfhuo.html
+			订单详情	imgys_ddglxs_dfhuo_ddxq.html
+			待收货		imgys_ddglxs_dsh.html
+			订单详情	imgys_ddglxs_dsh_ddxq.html
+			已完成		imgys_ddglxs_ywc.html
+			订单详情	imgys_ddglxs_ywc_ddxq.html
+			售后		imgys_ddglxs_sh.html
+			订单详情	imgys_ddglxs_sh_ddxq.html
+			订单退款后	imgys_ddglxs_sh_tkh.html
+		线下
+			待发货		imgys_ddglxx_dfhuo.html
+			订单详情	imgys_ddglxx_dfhuo_ddxq.html
+			待收货		imgys_ddglxx_dsh.html
+			订单详情	imgys_ddglxx_dsh_ddxq.html
+			已完成		imgys_ddglxx_ywc.html
+			订单详情	imgys_ddglxx_ywc_ddxq.html
+
+		报表数据		report_data.html
+		筛选			xxxxx
+		走势图			trend_chart.html
+		*收藏我的		collection.html
+		*关注我的		attention.html
+		*其他信息		other_information.html
+		*关于我们		about_us.html
+
+底部
+	f1关于爱派 	about_us.html
+	f2联系我们	contact_us.html
+	f3法律声明	legal_statement.html
+	f4服务条款	privacy_statement.html
+	f5著作权与商标说明	copyright_trademark.html
+	隐私说明        ys.html
