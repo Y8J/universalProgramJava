@@ -52,6 +52,7 @@ public class BaseTest implements Serializable {
 		return sex;
 	}
 	public void setSex(Integer sex) {
+
 		this.sex = sex;
 	}
 	public Integer getAge() {
