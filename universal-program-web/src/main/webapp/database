@@ -1,0 +1,17 @@
+数据库表代码
+
+用户信息表 t_user
+CREATE TABLE `t_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键(自增长)',
+  `userName` varchar(10) NOT NULL COMMENT '用户名 unique自动值唯一性约束',
+  `password` varchar(20) NOT NULL COMMENT '用户密码',
+  `mobile` varchar(11) DEFAULT NULL COMMENT '用户手机号码',
+  `email` varchar(50) DEFAULT NULL COMMENT '用户邮箱',
+  `age` int(11) DEFAULT NULL COMMENT '年龄',
+  `sex` int(11) DEFAULT NULL COMMENT '性别，1:男，2:女',
+  `type` int(11) NOT NULL DEFAULT '1' COMMENT '1:启用，2:禁用',
+  `createTime` datetime DEFAULT NULL COMMENT '新增时间',
+  `updateTime` datetime DEFAULT NULL COMMENT '修改时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `userName` (`userName`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
